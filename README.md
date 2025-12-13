@@ -1,104 +1,192 @@
-🧠 Mental Health Copilot – AI Support Chatbot
+# 🧠 Mental Health Voice Chatbot (Voice-to-Voice Copilot)
 
-A supportive, AI-powered mental health chatbot built using Streamlit and OpenAI (GPT-4o-mini).
-Provides a safe, empathetic, and non-judgmental space to express emotions, receive supportive responses, track mood trends, and explore coping strategies.
+A **real-time voice-enabled mental health chatbot** built using **FastAPI**, **OpenAI GPT**, **Speech Recognition**, and **Text-to-Speech (gTTS)**.
+Users can **speak** to the chatbot 🎤 and receive **spoken responses** 🔊, making it interactive, accessible, and user-friendly.
 
-⚠️ Disclaimer: This chatbot is not a substitute for professional mental health care.
+---
 
-📌 Problem Statement
+## 🚀 Project Overview
 
-Mental health issues such as stress, anxiety, loneliness, and burnout are rising, especially among students and professionals.
+Mental health support is often limited by accessibility and stigma. This project aims to provide a **supportive conversational AI assistant** that allows users to communicate **hands-free using voice**, helping them express thoughts more naturally.
 
-Challenges:
+⚠️ **Disclaimer:** This chatbot is for **support purposes only** and is **not a replacement for professional mental health care**.
 
-Stigma prevents open conversations
+---
 
-Limited access to immediate mental health support
+## ✨ Features
 
-Professional therapy can be costly or unavailable
+* 🎙️ **Speech-to-Text (STT)** using browser speech recognition
+* 🤖 **AI-powered responses** using OpenAI GPT
+* 🔊 **Text-to-Speech (TTS)** using gTTS
+* 🔁 **Session-based conversations** (context preserved)
+* 🌐 **Single-file full-stack app** (frontend + backend combined)
+* ⚡ **FastAPI backend** for high performance
+* 🧩 Easy to run in **VS Code**
 
-Lack of tools for real-time emotional check-ins
+---
 
-Need: An always-available, private, and easy-to-use mental health support system.
+## 🛠️ Technologies Used
 
-💡 Solution Overview
+### Backend
 
-Mental Health Copilot acts as a first-level emotional support assistant by:
+* **Python 3.10+**
+* **FastAPI** – backend framework
+* **OpenAI API** – conversational AI
+* **gTTS (Google Text-to-Speech)** – voice output
+* **Uvicorn** – ASGI server
 
-✅ Listening empathetically
+### Frontend
 
-✅ Analyzing emotional sentiment
+* **HTML5**
+* **JavaScript**
+* **Web Speech API** – voice input (SpeechRecognition)
+* **CSS** – simple UI styling
 
-✅ Offering positive coping strategies
+---
 
-✅ Tracking mood trends visually
+## 📂 Project Structure
 
-✅ Guiding users toward emergency help if needed
+```
+mental_health_chatbot/
+│
+├── main.py        # Combined frontend + backend code
+├── README.md      # Project documentation
+```
 
-Focuses on support, awareness, and early intervention, not diagnosis.
+---
 
-✨ Features
+## ⚙️ Setup Instructions (Run in VS Code)
 
-🤖 Supportive AI Chat
+### 1️⃣ Clone or Create Project Folder
 
-Uses GPT-4o-mini
+```bash
+mkdir mental_health_chatbot
+cd mental_health_chatbot
+```
 
-Responds empathetically and encouragingly
+Create a file named **`main.py`** and paste the combined code into it.
 
-Non-judgmental and emotionally aware
+---
 
-🧠 Sentiment Analysis
+### 2️⃣ Create Virtual Environment (Recommended)
 
-Classifies emotions into: 😊 Very Positive, 🙂 Positive, 😐 Neutral, 🙁 Negative, 😢 Very Negative
+```bash
+python -m venv venv
+```
 
-📈 Mood Tracking
+Activate it:
 
-Visualizes sentiment trends via line charts
+**Windows**
 
-Helps users recognize emotional patterns
+```bash
+venv\Scripts\activate
+```
 
-🌿 Coping Strategies
+**macOS / Linux**
 
-Suggests techniques for negative emotions
+```bash
+source venv/bin/activate
+```
 
-Encourages grounding and self-care
+---
 
-🚨 Emergency Support
+### 3️⃣ Install Dependencies
 
-Displays crisis helplines
+```bash
+pip install fastapi uvicorn openai gtts
+```
 
-Encourages professional help when needed
+---
 
-🧰 Tech Stack
+### 4️⃣ Set OpenAI API Key
 
-🖥️ Frontend & UI
+⚠️ **Do NOT hardcode your API key in the source code**
 
-Streamlit 🌐 – Rapid UI development, chat interface, session state, sidebar
+**Windows (PowerShell):**
 
-Custom CSS 🎨 – Mint Green & Deep Purple theme, styled chat bubbles and buttons
+```powershell
+$env:OPENAI_API_KEY="your_openai_api_key"
+```
 
-🤖 AI & NLP
+**macOS / Linux:**
 
-OpenAI GPT-4o-mini 🧠 – Empathetic responses, structured JSON sentiment analysis, coping strategy generation
+```bash
+export OPENAI_API_KEY="your_openai_api_key"
+```
 
-📊 Data & Visualization
+---
 
-Pandas 📈 – Stores sentiment history and prepares mood data
+### 5️⃣ Run the Application
 
-Streamlit Charts 📉 – Line chart for emotional trends
+```bash
+uvicorn main:app --reload
+```
 
-🔧 Utilities & Backend
+You should see:
 
-Python 🐍 – Core logic
+```
+Uvicorn running on http://127.0.0.1:8000
+```
 
-JSON 📦 – Structured AI output
+---
 
-Streamlit Session State 🧾 – Maintains chat history
+### 6️⃣ Open in Browser 🌐
 
-🛡️ Safety & Ethics
+Visit:
 
-Crisis helplines integrated
+```
+http://127.0.0.1:8000
+```
 
-Mental health disclaimer included
+Click **🎤 Speak**, talk to the chatbot, and listen to the AI response!
 
-No medical diagnosis
+---
+
+## 🔄 How It Works
+
+1. 🎙️ User speaks using the browser microphone
+2. 📝 Speech is converted to text (SpeechRecognition API)
+3. 📡 Text is sent to FastAPI `/chat` endpoint
+4. 🤖 OpenAI GPT generates a response
+5. 🔊 Response is converted to speech using gTTS
+6. 📢 Audio is sent back and played in the browser
+
+---
+
+## 🧠 Use Cases
+
+* Mental health support companion
+* Stress relief conversations
+* Voice-based AI assistant demo
+* Hackathon-ready AI project
+* Accessibility-focused chatbot
+
+---
+
+## 🔐 Security Notes
+
+* ❌ Never expose your OpenAI API key in public repositories
+* ✅ Use environment variables for secrets
+* ⚠️ This app stores conversations **in-memory only** (not persistent)
+
+---
+
+## 🚧 Future Enhancements
+
+* 💬 Chat bubble UI (user vs bot)
+* 🌈 Improved UI with Tailwind / CSS animations
+* 🧠 Sentiment analysis for emotional awareness
+* 🗂️ Database-backed conversation history
+* 🌍 Multi-language voice support
+
+---
+
+## 🏁 Conclusion
+
+This project demonstrates how **voice, AI, and web technologies** can be combined to create an **interactive mental health copilot**. It is lightweight, hackathon-friendly, and easy to extend.
+
+💡 *Built with passion for accessible AI solutions.*
+
+---
+
+### 🙌 Happy Coding & Take Care of Your Mental Health 💙
