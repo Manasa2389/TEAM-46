@@ -1,83 +1,104 @@
-🧠 Mental Health Support Chatbot
+🧠 Mental Health Copilot – AI Support Chatbot
 
-A simple, supportive mental health chatbot built using Streamlit and the OpenAI API (GPT-4o-mini).
-It provides users with a safe, non-judgmental space to express emotions, receive empathetic responses, track mood trends, and explore basic coping strategies based on sentiment analysis.
+A supportive, AI-powered mental health chatbot built using Streamlit and OpenAI (GPT-4o-mini).
+Provides a safe, empathetic, and non-judgmental space to express emotions, receive supportive responses, track mood trends, and explore coping strategies.
+
+⚠️ Disclaimer: This chatbot is not a substitute for professional mental health care.
 
 📌 Problem Statement
 
-Mental health challenges such as stress, anxiety, loneliness, and burnout are increasing rapidly, especially among students and working professionals.
+Mental health issues such as stress, anxiety, loneliness, and burnout are rising, especially among students and professionals.
 
-🚫 Key Issues:
+Challenges:
 
-Many people hesitate to seek help due to stigma or fear of judgment
+Stigma prevents open conversations
 
-Professional therapy can be expensive or inaccessible
+Limited access to immediate mental health support
 
-Lack of immediate emotional support during difficult moments
+Professional therapy can be costly or unavailable
 
-Absence of simple tools to track emotional well-being over time
+Lack of tools for real-time emotional check-ins
 
-👉 There is a strong need for an accessible, private, and always-available mental health support system that can provide emotional assistance and encourage healthy coping habits.
+Need: An always-available, private, and easy-to-use mental health support system.
 
 💡 Solution Overview
 
-The Mental Health Support Chatbot addresses these challenges by offering:
+Mental Health Copilot acts as a first-level emotional support assistant by:
 
-✅ A supportive AI chatbot that listens empathetically
-✅ Real-time sentiment analysis of user messages
-✅ Mood tracking visualization during the session
-✅ Personalized coping strategies based on emotional state
-✅ Emergency mental health resources for crisis situations
+✅ Listening empathetically
 
-The chatbot does NOT replace professional care, but acts as a first line of emotional support 🌱
+✅ Analyzing emotional sentiment
 
-✨ Key Features
-🤖 Supportive Chat
+✅ Offering positive coping strategies
 
-Uses OpenAI GPT-4o-mini
+✅ Tracking mood trends visually
 
-Trained with a system prompt to act as a kind, empathetic mental health companion
+✅ Guiding users toward emergency help if needed
 
-Encourages expression without judgment
+Focuses on support, awareness, and early intervention, not diagnosis.
 
-📊 Sentiment Analysis
+✨ Features
 
-Powered by TextBlob
+🤖 Supportive AI Chat
 
-Analyzes message polarity:
+Uses GPT-4o-mini
 
-😊 Very Positive
+Responds empathetically and encouragingly
 
-🙂 Positive
+Non-judgmental and emotionally aware
 
-😐 Neutral
+🧠 Sentiment Analysis
 
-🙁 Negative
+Classifies emotions into: 😊 Very Positive, 🙂 Positive, 😐 Neutral, 🙁 Negative, 😢 Very Negative
 
-😢 Very Negative
+📈 Mood Tracking
 
-📈 Mood Tracker
+Visualizes sentiment trends via line charts
 
-Tracks sentiment over the session
-
-Displays a line chart showing emotional trends
-
-Helps users understand their mood patterns visually
+Helps users recognize emotional patterns
 
 🌿 Coping Strategies
 
-Offers simple, actionable techniques:
+Suggests techniques for negative emotions
 
-Breathing exercises
+Encourages grounding and self-care
 
-Grounding techniques
+🚨 Emergency Support
 
-Self-care reminders
+Displays crisis helplines
 
-Suggestions adapt to the user’s emotional state
+Encourages professional help when needed
 
-🚨 Emergency Resources
+🧰 Tech Stack
 
-Displays crisis helplines and support links
+🖥️ Frontend & UI
 
-Encourages professional help during severe distress
+Streamlit 🌐 – Rapid UI development, chat interface, session state, sidebar
+
+Custom CSS 🎨 – Mint Green & Deep Purple theme, styled chat bubbles and buttons
+
+🤖 AI & NLP
+
+OpenAI GPT-4o-mini 🧠 – Empathetic responses, structured JSON sentiment analysis, coping strategy generation
+
+📊 Data & Visualization
+
+Pandas 📈 – Stores sentiment history and prepares mood data
+
+Streamlit Charts 📉 – Line chart for emotional trends
+
+🔧 Utilities & Backend
+
+Python 🐍 – Core logic
+
+JSON 📦 – Structured AI output
+
+Streamlit Session State 🧾 – Maintains chat history
+
+🛡️ Safety & Ethics
+
+Crisis helplines integrated
+
+Mental health disclaimer included
+
+No medical diagnosis
